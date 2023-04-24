@@ -6,7 +6,8 @@
 # If the suggested letter does not appear in the word, the other player draws   |
 # one part of a hanging man stick figure as a tally mark. The game continues    |
 # until the guessing player either correctly guesses the word or the hanging    |
-# man is completed. Good Luck!                                                  |          
+# man is completed. In this game the player will be playing against the         |
+# CPU. Good Luck!                                                               |          
 #-------------------------------------------------------------------------------
 
 # Import necessary modules, in this case is random to give the player a random word to play with.
