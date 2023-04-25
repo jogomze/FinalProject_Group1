@@ -97,11 +97,11 @@ def sing():
              print(f"Accepting the confession of love by Gabransa, {player_name} would sing, chant and dance with Gabransa. The solitude that they were used to would disolve along the laughs, and {player_name} would understand that this is what happiness must truly feel like. Cycles would pass in their roccoco-like life, until eventually both would grow too old to stand. So, along the edge of a cliff, before their end {player_name} would tell Gabransa: \"this was a good life\".\n")
              
 
-def reset_game():
+def reset_game(): #resets game input
     global player_name
     player_name = None
-    settle_down() = None
-    sing() = None
+    settle_down = None
+    sing = None
 
 def play_again():
     while True:
