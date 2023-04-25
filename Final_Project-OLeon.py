@@ -3,7 +3,11 @@ import time #import time is used to regulate the intervals at which text appear 
 def intro(): #by defining the function, we will later use it for the split between the 2 major decisions of the game
     time.sleep(2) #by creating the following function, we tell the program how long it will take for the paragraph to be displayed
     global player_name
-    player_name = input("Welcome to Self, Solace, and Solitude! What is your name? ")
+import time #import time is used to regulate the intervals at which text appear for better eligibility
+    
+def intro(player_name): #by defining the function, we will later use it for the split between the 2 major decisions of the game
+    time.sleep(2) #by creating the following function, we tell the program how long it will take for the paragraph to be displayed
+   
     print(f"You will take charge of {player_name}, a crashlanded colonist. \n")
     
     print(f"As {player_name}  falls through the ashen sky of a yet to be born world, a cloud of ash hugs {player_name} while a sky of smoldering orange spectates its third colonist be dropped into its earth. Like a bloody drop from the cornea of an orange dream, {player_name} crashes violently against the ground. And as the earth lets out a cry, {player_name} opens their eyes.\n") #we use \n at the end so the next paragraph will have a space for better elegibility
@@ -24,7 +28,7 @@ def intro(): #by defining the function, we will later use it for the split betwe
     print("which option will they choose? Will they settle down or will they sing?\n")
     time.sleep(2)
 
-def settle_down():
+def settle_down(player_name):
    print(f"Accustomed to solitude, {player_name} surprisingly adapted to her situation extremely quickly. In just a few hours, they had already become all too familiar with the molten rocks that they would walk across, and by a little rock spectating the fiery ocean, {player_name} decided to settle down and make her own home. Three days would pass where they would walk the burning plateau with the only thought being how they would even begin the colonization process.\n")
    time.sleep(2)
    
@@ -59,7 +63,7 @@ def settle_down():
         else:
             print(f"Accepting the confession of love by Ansodu, {player_name} would walk across bizzare mirages and chaotic mountains. At the top of the greatest mountain, Ansodu and {player_name} would make their home, where they could see the world in its full beauty. The years would pass until their eventual death, however, before their inevitable end, {player_name} would only say \"this was a good life\"")
 
-def sing():
+def sing(player_name):
     print(f"{player_name} sings songs from the old world\n")
     time.sleep(2)
    
@@ -97,12 +101,6 @@ def sing():
              print(f"Accepting the confession of love by Gabransa, {player_name} would sing, chant and dance with Gabransa. The solitude that they were used to would disolve along the laughs, and {player_name} would understand that this is what happiness must truly feel like. Cycles would pass in their roccoco-like life, until eventually both would grow too old to stand. So, along the edge of a cliff, before their end {player_name} would tell Gabransa: \"this was a good life\".\n")
              
 
-def reset_game(): #resets game input
-    global player_name
-    player_name = None
-    settle_down = None
-    sing = None
-
 def play_again():
     while True:
         time.sleep(2)
@@ -110,9 +108,8 @@ def play_again():
         choice = input().lower()
         if choice == "yes":
             player_name = "" # reset player name variable
-            reset_game() # rest of the code
-            intro()  # call the intro function to start the game again
-            break
+            main()  # call the intro function to start the game again
+            break#stops the function from being recalled unless the player reaches the end of the game once again
         elif choice == "no":
             print("Thanks for playing!")
             break
@@ -121,15 +118,17 @@ def play_again():
 
 
 def main(): #The def main(): statement in the code defines a function called main(). Any code that is written inside this function will be executed when the program is run.
-    intro()
+    player_name = "" #resets the player name to default
+    player_name = input("Welcome to Self, Solace, and Solitude! What is your name? ") #prompts the user for a custom player name
+    intro(player_name) #functions have the variable of player_name inside them so they can use it for the different choices
     choice = input().lower()
     if choice == "settle down":
-        settle_down()
+        settle_down(player_name)
         
     elif choice == "sing":
-        sing()
+        sing(player_name)
         
-    play_again()
+    play_again()#prompts the game to start the re-start of game function
         
 if __name__ == "__main__":#checks if the current module is being executed as the main program
     main()
