@@ -136,11 +136,14 @@ while wrong_guesses < MAX_WRONG_GUESSES and guessed_so_far != selected_language:
     else:
         print("\nSorry,", guess, "isn't in the language.")
         wrong_guesses += 1
-    if guessed_so_far == selected_language:
+    # Win or loose
+if guessed_so_far == selected_language:
         print("\nCongratulations! You guessed the word", selected_language)
-    else:
-        print(HANGMAN_STAGES[MAX_WRONG_GUESSES])
-        print("\nSorry, you ran out of guesses. The word was", selected_language)
+else:
+    guessed_so_far != selected_language
+print(HANGMAN_STAGES[MAX_WRONG_GUESSES])
+print("\nSorry, you ran out of guesses. The word was", selected_language)
+
 
 
 
